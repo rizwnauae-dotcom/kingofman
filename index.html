@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 Free Fire Gaming Hub</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{
+background:#0a0a0a;
+color:#fff;
+}
+header{
+text-align:center;
+padding:70px 20px;
+background:linear-gradient(135deg,#111,#222);
+}
+header h1{
+color:#ffcc00;
+font-size:3rem;
+}
+.container{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+.card{
+background:#181818;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+}
+.card h2{
+color:#ffcc00;
+margin-bottom:15px;
+}
+input,select,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:8px;
+}
+input,select{
+background:#2a2a2a;
+color:white;
+}
+button{
+background:#ffcc00;
+color:black;
+font-weight:bold;
+cursor:pointer;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+.feature{
+background:#1a1a1a;
+padding:20px;
+border-radius:12px;
+}
+table{
+width:100%;
+border-collapse:collapse;
+}
+th,td{
+padding:12px;
+border-bottom:1px solid #333;
+text-align:left;
+}
+th{
+color:#ffcc00;
+}
+footer{
+text-align:center;
+padding:20px;
+color:#888;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🔥 Free Fire Gaming Hub</h1>
+<p>Community, Profiles, Stats & Gaming Events</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>🔍 UID Search (Demo)</h2>
+
+<input id="searchUid" placeholder="Enter UID">
+<button onclick="searchUID()">Search Profile</button>
+
+<div id="profileResult"></div>
+</div>
+
+<div class="card">
+<h2>💎 Top-Up Cost Calculator</h2>
+
+<input id="uid" placeholder="Enter UID">
+
+<select id="diamonds">
+<option value="100">100 Diamonds</option>
+<option value="500">500 Diamonds</option>
+<option value="1000">1000 Diamonds</option>
+<option value="5000">5000 Diamonds</option>
+</select>
+
+<button onclick="calculateCost()">
+Calculate
+</button>
+
+<div id="costResult"></div>
+</div>
+
+<div class="grid">
+
+<div class="feature">
+<h3>🏆 Tournaments</h3>
+<p>Join gaming competitions.</p>
+</div>
+
+<div class="feature">
+<h3>👤 Player Profiles</h3>
+<p>Track player information.</p>
+</div>
+
+<div class="feature">
+<h3>📊 Statistics</h3>
+<p>View rankings and scores.</p>
+</div>
+
+<div class="feature">
+<h3>📰 Updates</h3>
+<p>Latest community news.</p>
+</div>
+
+</div>
+
+<div class="card">
+<h2>🏆 Leaderboard</h2>
+
+<table>
+<tr>
+<th>Rank</th>
+<th>Player</th>
+<th>Score</th>
+</tr>
+
+<tr>
+<td>#1</td>
+<td>ShadowX</td>
+<td>9820</td>
+</tr>
+
+<tr>
+<td>#2</td>
+<td>AlphaYT</td>
+<td>9510</td>
+</tr>
+
+<tr>
+<td>#3</td>
+<td>NightWolf</td>
+<td>9275</td>
+</tr>
+
+</table>
+</div>
+
+</div>
+
+<footer>
+© 2025 Free Fire Gaming Hub
+</footer>
+
+<script>
+function searchUID(){
+
+let uid=document.getElementById("searchUid").value;
+
+if(uid===""){
+alert("Enter UID");
+return;
+}
+
+document.getElementById("profileResult").innerHTML=
+`
+<hr>
+<h3>👤 Player Profile</h3>
+<p><b>UID:</b> ${uid}</p>
+<p><b>Name:</b> Demo Player</p>
+<p><b>Level:</b> 65</p>
+<p><b>Rank:</b> Heroic</p>
+<p><b>Region:</b> Asia</p>
+`;
+}
+
+function calculateCost(){
+
+let uid=document.getElementById("uid").value;
+let diamonds=document.getElementById("diamonds").value;
+
+if(uid===""){
+alert("Enter UID");
+return;
+}
+
+let cost=(diamonds*0.01).toFixed(2);
+
+document.getElementById("costResult").innerHTML=
+`
+<b>UID:</b> ${uid}<br>
+<b>Package:</b> ${diamonds} Diamonds<br>
+<b>Estimated Cost:</b> $${cost}
+`;
+}
+</script>
+
+</body>
+</html>
